@@ -47,14 +47,14 @@ function [bw-1:0] dec2bin ;
 endfunction
 
 
-sfp #(.bw(bw), .psum_bw(psum_bw)) sfp_instance (
+sfp #(.INPUT_WIDTH(bw), .OUTPUT_WIDTH(psum_bw)) sfp_instance (
 	.clk(clk), 
-	.reset(reset), 
-  .in(in),
-  .thres(thres),
-  .acc(acc), 
-  .relu(relu),
-	.out(out)
+	.rst(reset), 
+  .data_i(in),
+  .thres_i(thres),
+  .acc_i(acc), 
+  .relu_i(relu),
+	.data_o(out)
 );
 
 initial begin 
