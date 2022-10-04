@@ -6,25 +6,25 @@ module sfp
     parameter   OUTPUT_WIDTH                    =   16
 )
 (
-    input   logic                                   clk,
-    input   logic                                   rst,
+    input   wire                                    clk,
+    input   wire                                    rst,
 
-    input   logic   signed  [INPUT_WIDTH-1:0]       data_i,
+    input   wire   signed  [INPUT_WIDTH-1:0]        data_i,
     //threshold
-    input   logic   signed  [OUTPUT_WIDTH-1:0]      thres_i,
+    input   wire   signed  [OUTPUT_WIDTH-1:0]       thres_i,
     //accumulate operation
-    input   logic                                   acc_i,
+    input   wire                                    acc_i,
     //relu operation
-    input   logic                                   relu_i,
+    input   wire                                    relu_i,
 
-    output  logic   signed  [OUTPUT_WIDTH-1:0]      data_o
+    output  wire   signed  [OUTPUT_WIDTH-1:0]       data_o
 );
 
 
-    logic  signed   [OUTPUT_WIDTH-1:0]          data_q;
+    reg     signed   [OUTPUT_WIDTH-1:0]         data_q;
     assign  data_o                          =   data_q;
 
-    always_ff @(posedge clk) begin
+    always @(posedge clk) begin
         if (rst) begin
             data_q                          <=  0;
         end
