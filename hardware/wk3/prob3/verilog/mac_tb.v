@@ -95,9 +95,9 @@ endfunction
 
 // Below function is for verification
 function [psum_bw-1:0] mac_predicted;
-  input   integer a;
-  input   signed  integer b;
-  input   signed  integer c;
+  input   [bw-1:0] a;
+  input   signed [bw-1:0] b;
+  input   signed [psum_bw-1:0] c;
   begin
     mac_predicted = a * b + c;
   end
