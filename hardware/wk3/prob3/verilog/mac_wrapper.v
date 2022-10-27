@@ -15,11 +15,11 @@ reg    [bw-1:0] a_q;
 reg    [bw-1:0] b_q;
 reg    [psum_bw-1:0] c_q;
 
-mac #(.bw(bw), .psum_bw(psum_bw)) mac_instance (
-        .a(a_q), 
-        .b(b_q),
-        .c(c_q),
-	.out(out)
+mac #(.DATA_WIDTH(bw), .SUM_WIDTH(psum_bw)) mac_instance (
+        .data_in(a_q), 
+        .weight_in(b_q),
+        .acc_in(c_q),
+	.acc_out(out)
 ); 
 
 always @ (posedge clk) begin

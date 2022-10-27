@@ -62,17 +62,45 @@ endfunction
 
 
 function [3:0] x_bin ;
+  input integer   data;
+  begin
+    if (data > 7) begin
+      x_bin[3] = 1;
+      data = data - 8;
+    end
+    else
+      x_bin[3] = 0;
+    if (data>3) begin
+     x_bin[2] = 1;
+     data = data - 4;
+    end
+    else 
+     x_bin[2] = 0;
 
-...
+    if (data>1) begin
+     x_bin[1] = 1;
+     data = data - 2;
+    end
+    else 
+     x_bin[1] = 0;
 
+    if (data>0) 
+     x_bin[0] = 1;
+    else 
+     x_bin[0] = 0;
+
+  end
 endfunction
 
 
 // Below function is for verification
 function [psum_bw-1:0] mac_predicted;
-  
-...
-
+  input   integer a;
+  input   signed  integer b;
+  input   signed  integer c;
+  begin
+    mac_predicted = a * b + c;
+  end
 endfunction
 
 
