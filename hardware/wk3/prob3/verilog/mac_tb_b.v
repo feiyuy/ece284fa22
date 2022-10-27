@@ -143,8 +143,8 @@ initial begin
   w_file = $fopen("b_data.txt", "r");  //weight data
   x_file = $fopen("a_data.txt", "r");  //activation
 
-  $dumpfile("mac_tb.vcd");
-  $dumpvars(0,mac_tb);
+  $dumpfile("mac_tb_b.vcd");
+  $dumpvars(0,mac_tb_b);
  
   #1 clk = 1'b0;  
   #1 clk = 1'b1;  
