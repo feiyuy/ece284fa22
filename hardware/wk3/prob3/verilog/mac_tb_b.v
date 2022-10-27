@@ -108,12 +108,12 @@ endfunction
 // Below function is for verification
 function [psum_bw-1:0] mac_predicted;
   input   [bw-1:0] a0;
-  input   [bw-1:0] a1;
-  input   [bw-1:0] a2;
-  input   [bw-1:0] a3;
   input   signed [bw-1:0] b0;
+  input   [bw-1:0] a1;
   input   signed [bw-1:0] b1;
+  input   [bw-1:0] a2;
   input   signed [bw-1:0] b2;
+  input   [bw-1:0] a3;
   input   signed [bw-1:0] b3;
   input   signed [psum_bw-1:0] c;
   begin
