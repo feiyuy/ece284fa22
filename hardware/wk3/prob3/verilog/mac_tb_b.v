@@ -123,7 +123,7 @@ endfunction
 
 
 
-mac_wrapper #(.bw(bw), .psum_bw(psum_bw)) mac_wrapper_instance (
+mac_wrapper_b #(.bw(bw), .psum_bw(psum_bw)) mac_wrapper_instance (
 	.clk(clk), 
         .a0(a0), 
         .b0(b0),

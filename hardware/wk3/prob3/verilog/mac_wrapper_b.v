@@ -27,7 +27,7 @@ reg    [bw-1:0] a3_q;
 reg    [bw-1:0] b3_q;
 reg    [psum_bw-1:0] c_q;
 
-mac #(.DATA_WIDTH(bw), .SUM_WIDTH(psum_bw)) mac_instance (
+mac_b #(.DATA_WIDTH(bw), .SUM_WIDTH(psum_bw)) mac_instance (
         .data0_in(a0_q), 
         .weight0_in(b0_q),
         .data1_in(a1_q), 
